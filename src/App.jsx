@@ -12,7 +12,8 @@ export const App = () => {
       const fact = await fetch(API)
       const factData = await fact.json()
       console.log(factData)
-      setStoreDogFact(factData)
+      setStoreDogFact(factData.data[0])
+      console.log(factData.data[0])
     } catch (error) {
       console.error("fail", error)
     }
